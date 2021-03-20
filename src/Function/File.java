@@ -10,7 +10,6 @@ import java.io.Writer;
 import java.util.Scanner;
 
 public class File {
-
 	
 	public void readFile(String File, double Value, String OutputDirectory) throws Exception {
 		BufferedReader Buffer = new BufferedReader(new InputStreamReader(new FileInputStream(File), "UTF-8"));
@@ -24,11 +23,10 @@ public class File {
 				String WritingData = helperScanner.next();
 				if (usableData == 1) {
 					String textToWritePreFormated = WritingData + ";" + helperScanner.next() + ";" + Value;
-					char help1 = '"';
-					String help2 = Character.toString(help1);
-					String textToWriteFormated = textToWritePreFormated.replaceAll(help2, "");
+					String variableForFormat = Character.toString('"');
+					String textToWriteFormated = textToWritePreFormated.replaceAll(variableForFormat, "");
 					writeFile(textToWriteFormated, OutputDirectory);
-					usableData = 3;
+					usableData = 5;
 				}
 				usableData++;
 			}
@@ -36,13 +34,11 @@ public class File {
 		}
 		Buffer.close();
 	}
-
 	
 	public void writeFile(String Line, String OutputDirectory) throws IOException {
 		Writer File = new BufferedWriter(new FileWriter(OutputDirectory+"Output_NUTROR.txt", true));
 		File.append(Line + "\n");
 		File.close();
 	}
-
 	
 }
