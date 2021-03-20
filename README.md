@@ -3,7 +3,7 @@ Este código lê o arquivo csv da lista de alunos exportado pelo Nutror e gera u
 
 @Instruções de uso:
 
-1 - Na primeira janela colocar o caminho completo do arquivo csv a ser processador, exemplo: C:\Users\jorgi\Downloads\Report_Nutror.csv
+1 - Na primeira janela colocar o caminho completo do arquivo csv a ser processado, exemplo: C:\Users\jorgi\Downloads\Report_Nutror.csv
 
 2 - Na segunda janela colocar o caminho da pasta para o arquivo de saida ser salvo, exemplo: C:\Users\jorgi\Downloads\
 
