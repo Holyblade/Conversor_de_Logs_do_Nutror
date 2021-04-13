@@ -10,10 +10,11 @@ import java.io.Writer;
 import java.util.Scanner;
 
 public class File {
-	
+
 	public void readFile(String File, double Value, String OutputDirectory) throws Exception {
 		BufferedReader Buffer = new BufferedReader(new InputStreamReader(new FileInputStream(File), "UTF-8"));
 		String Line = Buffer.readLine();
+		UniqueList<Object[]> UniqueList = new UniqueList<Object[]>();
 		while (Line != null) {
 			Line = Buffer.readLine();
 			Scanner helperScanner = new Scanner(Line);
@@ -25,7 +26,10 @@ public class File {
 					String textToWritePreFormated = WritingData + ";" + helperScanner.next() + ";" + Value;
 					String variableForFormat = Character.toString('"');
 					String textToWriteFormated = textToWritePreFormated.replaceAll(variableForFormat, "");
-					writeFile(textToWriteFormated, OutputDirectory);
+					if (!UniqueList.contains(new Object[] { textToWriteFormated })) {
+						UniqueList.add(new Object[] { textToWriteFormated });
+						writeFile(textToWriteFormated, OutputDirectory);
+					}
 					usableData = 5;
 				}
 				usableData++;
@@ -34,11 +38,11 @@ public class File {
 		}
 		Buffer.close();
 	}
-	
+
 	public void writeFile(String Line, String OutputDirectory) throws IOException {
-		Writer File = new BufferedWriter(new FileWriter(OutputDirectory+"Output_NUTROR.txt", true));
+		Writer File = new BufferedWriter(new FileWriter(OutputDirectory + "Output_NUTROR.txt", true));
 		File.append(Line + "\n");
 		File.close();
 	}
-	
+
 }
