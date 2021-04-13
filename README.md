@@ -9,7 +9,7 @@ Este código lê o arquivo csv da lista de alunos exportado pelo Nutror e gera u
 
 3 - Na terceira janela colocar o valor do seu produto para adicionar no facebook business como LTV, exemplo: 49.90
 
-#Aletração 13/04/2021
+#Alteração 13/04/2021
 
 Agora o algoritmo remove os e-mails repetidos antes de gerar a saida em txt.
 
